@@ -34,7 +34,7 @@ pipeline {
   stage('Publish image to Docker Hub') {
           
             steps {
-				withDockerRegistry([ credentialsId: "dockerhub_creds", url: "" ]) {
+				withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
 			//	sh  'docker push srikanta/samplewebapp:latest'
 				sh  'docker push srikanta/samplewebapp:$BUILD_NUMBER' 
         }
